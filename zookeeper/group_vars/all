@@ -1,3 +1,9 @@
 ---
-zk_binary_dest_dir: /opt/zookeeper
+zk_download_url: https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.4.12/zookeeper-3.4.12.tar.gz
+zk_binary_name: zookeeper-3.4.12.tar.gz
+zk_binary_src_dir: /opt/downloadfile
+zk_binary_dest_dir: /opt/downloadfile
+
+zk_install_dir: /opt/app
+
 
