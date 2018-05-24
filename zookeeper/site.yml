@@ -9,3 +9,8 @@
   remote_user: root
   roles:
     - common
+- name: Zookeeper start
+  hosts: all
+  remote_user: root
+  roles:
+    - zk-cluster

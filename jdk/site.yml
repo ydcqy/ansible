@@ -1,0 +1,6 @@
+---
+- name: Jdk environment init
+  hosts: all
+  remote_user: root
+  roles:
+    - common

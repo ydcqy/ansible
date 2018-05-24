@@ -5,6 +5,8 @@
   unarchive: src={{ zk_binary_src_dir }}/{{ zk_binary_name }} dest={{ zk_install_dir }}
 - name: copy zoo.cfg to install directory
   template: src=zoo.cfg dest={{ zk_install_dir }}/{{zk_app_name}}/conf/zoo.cfg
+- name: copy myid to data directory
+  template: src=myid dest={{zk_data_dir}}
 - name: setup env vars
   shell: "sed -i '/ZOO_LOG_DIR/d' /etc/profile && sed -i '$a export ZOO_LOG_DIR={{zk_log_dir}}' /etc/profile"
 

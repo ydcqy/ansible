@@ -1,0 +1,3 @@
+---
+- name: start zk...
+  shell: "{{zk_install_dir}}/{{zk_app_name}}/bin/zkServer.sh start"

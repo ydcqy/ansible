@@ -1,0 +1,10 @@
+---
+- name: create jdk install directory
+  file: path={{ jdk_install_dir }} state=directory
+- name: unarchive jdk binary to install directory
+  unarchive: src={{ jdk_binary_src_dir }}/{{ jdk_binary_name }} dest={{ jdk_install_dir }}
+- name: setup env var >>> JAVA_HOME
+  shell: "sed -i '/JAVA_HOME/d' /etc/bashrc && sed -i '$a export JAVA_HOME={{jdk_install_dir}}/{{jdk_app_name}}' /etc/bashrc"
+- name: setup env var >>> PATH
+  shell: "sed -i '$a export PATH=$PATH:$JAVA_HOME/bin' /etc/bashrc"
+
