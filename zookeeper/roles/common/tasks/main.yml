@@ -1,0 +1,5 @@
+---
+- name: Copy zookeeper binary
+  file:
+    src: zookeeper-3.4.12.tar.gz
+    dest: /opt/zookeeper/zookeeper-3.4.12.tar.gz
