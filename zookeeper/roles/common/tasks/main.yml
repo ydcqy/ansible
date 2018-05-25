@@ -1,9 +1,10 @@
 ---
-- name: Create zookeeper binary directory
-  file: path={{ zk_binary_dest_dir }} state=directory
-- name: Create zookeeper install directory
+- name: create zookeeper install directory
   file: path={{ zk_install_dir }} state=directory
-- name: Copy zookeeper binary to dest
-  copy: src={{ zk_binary_src_dir }}/{{ zk_binary_name }} dest={{ zk_binary_dest_dir }}/{{ zk_binary_name }}
-- name: Uncompress zookeeper binary to install directory
-  shell: tar -xzf {{ zk_binary_dest_dir }}/{{ zk_binary_name }} -C {{ zk_install_dir }}
+- name: unarchive zookeeper binary to install directory
+  unarchive: src={{ zk_binary_src_dir }}/{{ zk_binary_name }} dest={{ zk_install_dir }}
+- name: copy zoo.cfg to install directory
+  template: src=zoo.cfg dest={{ zk_install_dir }}/{{zk_app_name}}/conf/zoo.cfg
+- name: setup env vars
+  shell: "sed -i '/ZOO_LOG_DIR/d' /etc/profile && sed -i '$a export ZOO_LOG_DIR={{zk_log_dir}}' /etc/profile"
+

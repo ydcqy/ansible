@@ -2,8 +2,11 @@
 zk_download_url: https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.4.12/zookeeper-3.4.12.tar.gz
 zk_binary_name: zookeeper-3.4.12.tar.gz
 zk_binary_src_dir: /opt/downloadfile
-zk_binary_dest_dir: /opt/downloadfile
-
 zk_install_dir: /opt/app
+zk_app_name: zookeeper-3.4.12
 
+zk_data_dir: /var/data/zookeeper
+zk_log_dir: /var/log/zookeeper
+zk_client_port: 2181
+zk_cluster_link_port: 2888:3888
 

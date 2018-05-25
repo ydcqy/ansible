@@ -2,9 +2,9 @@
 - name: Local resource init
   hosts: localhost
   tasks:
-    - name: Download file to local by url
+    - name: download file to local by url
       shell: "[ -f {{ zk_binary_src_dir }}/{{zk_binary_name}} ] || (mkdir -p {{ zk_binary_src_dir }} && wget -O {{ zk_binary_src_dir }}/{{ zk_binary_name }} {{ zk_download_url }})"
-- name: zookeeper environment init
+- name: Zookeeper environment init
   hosts: all
   remote_user: root
   roles:
