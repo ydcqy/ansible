@@ -4,6 +4,6 @@
 - name: Create zookeeper install directory
   file: path={{ zk_install_dir }} state=directory
 - name: Copy zookeeper binary to dest
-  file: src={{ zk_binary_src_dir }}/{{ zk_binary_name }} dest={{ zk_binary_dest_dir }}/{{ zk_binary_name }}
+  copy: src={{ zk_binary_src_dir }}/{{ zk_binary_name }} dest={{ zk_binary_dest_dir }}/{{ zk_binary_name }}
 - name: Uncompress zookeeper binary to install directory
-  shell: tar -xzf {{ zk_binary_dest_dir }}/{{ zk_binary_name }} {{ zk_install_dir }}
+  shell: tar -xzf {{ zk_binary_dest_dir }}/{{ zk_binary_name }} -C {{ zk_install_dir }}
