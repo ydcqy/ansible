@@ -8,5 +8,5 @@
 - name: copy myid to data directory
   template: src=myid dest={{zk_data_dir}}
 - name: setup env vars
-  shell: "sed -i '/ZOO_LOG_DIR/d' /etc/profile && sed -i '$a export ZOO_LOG_DIR={{zk_log_dir}}' /etc/profile"
+  shell: "sed -i '/ZOO_LOG_DIR/d' /etc/bashrc && sed -i '$a export ZOO_LOG_DIR={{zk_log_dir}}' /etc/bashrc && source /etc/bashrc"
 
