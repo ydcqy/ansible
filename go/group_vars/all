@@ -1,0 +1,5 @@
+---
+go_binary_name: jdk-8u172-linux-x64.tar.gz
+go_binary_src_dir: /opt/downloadfile
+go_install_dir: /opt/app/go
+go_app_name: jdk1.8.0_172

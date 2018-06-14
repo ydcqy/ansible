@@ -1,6 +1,8 @@
 ---
 - name: create zookeeper install directory
   file: path={{ zk_install_dir }} state=directory
+- name: create zookeeper data directory
+  file: path={{ zk_data_dir }} state=directory
 - name: unarchive zookeeper binary to install directory
   unarchive: src={{ zk_binary_src_dir }}/{{ zk_binary_name }} dest={{ zk_install_dir }}
 - name: copy zoo.cfg to install directory
