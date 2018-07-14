@@ -1,0 +1,13 @@
+---
+# download_url: https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.4.12/zookeeper-3.4.12.tar.gz
+binary_name: kafka_2.12-1.1.0.tgz
+binary_src_dir: /opt/downloadfile
+install_dir: /opt/app/kafka
+app_name: kafka_2.12-1.1.0
+
+zookeeper_connect: 10.1.7.11:2181,10.1.7.12:2181,10.1.7.13:2181
+zk_data_dir: /var/data/zookeeper
+zk_log_dir: /var/log/zookeeper
+zk_client_port: 2181
+zk_cluster_port: 2888:3888
+

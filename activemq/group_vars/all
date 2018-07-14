@@ -1,0 +1,5 @@
+---
+jdk_binary_name: jdk-8u172-linux-x64.tar.gz
+jdk_binary_src_dir: /opt/downloadfile
+jdk_install_dir: /opt/app/java
+jdk_app_name: jdk1.8.0_172

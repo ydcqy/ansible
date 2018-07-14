@@ -1,0 +1,16 @@
+---
+- name: Local resource init
+  hosts: localhost
+  tasks:
+    - name: download file to local by url
+      shell: "[ -f {{ zk_binary_src_dir }}/{{zk_binary_name}} ] || (mkdir -p {{ zk_binary_src_dir }} && wget -O {{ zk_binary_src_dir }}/{{ zk_binary_name }} {{ zk_download_url }})"
+- name: Zookeeper environment init
+  hosts: all
+  remote_user: root
+  roles:
+    - common
+- name: Zookeeper start
+  hosts: all
+  remote_user: root
+  roles:
+    - zk-cluster
