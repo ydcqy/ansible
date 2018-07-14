@@ -1,0 +1,11 @@
+---
+- name: create web install directory
+  file: path={{ web_install_dir }} state=directory
+- name: unarchive web binary to install directory
+  unarchive: src={{ web_binary_src_dir }}/{{ web_binary_name }} dest={{ web_install_dir }}
+- name: setup sbt yum.repo
+  shell: "curl https://bintray.com/sbt/rpm/rpm > /etc/yum.repos.d/bintray-sbt-rpm.repo"
+- name: install sbt
+  shell: "yum install -y sbt"
+- name: sbt compile
+  shell: "cd {{ web_install_dir }}/{{web_app_name}} && ./sbt clean dist"

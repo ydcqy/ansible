@@ -1,0 +1,7 @@
+---
+- name: Sync date
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: install ntp
+      shell: "date"

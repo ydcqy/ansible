@@ -1,0 +1,9 @@
+---
+- name: Sync date
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: install ntp
+      shell: "yum install -y ntp && systemctl enable ntpd && systemctl restart ntpd"
+    #- name: setup ntp
+    #  shell: "ntpdate 0.centos.pool.ntp.org"

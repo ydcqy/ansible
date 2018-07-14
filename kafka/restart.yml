@@ -1,7 +1,7 @@
 ---
-- name: Zookeeper restart
+- name: Kafka restart
   hosts: all
   remote_user: root
   tasks:
-    - name: restart zk...
-      shell: "{{zk_install_dir}}/{{zk_app_name}}/bin/zkServer.sh restart"
+    - name: restart kafka...
+      shell: "{{install_dir}}/{{app_name}}/bin/kafka-server-stop.sh;{{install_dir}}/{{app_name}}/bin/kafka-server-start.sh -daemon {{install_dir}}/{{app_name}}/config/server.properties"

@@ -1,14 +1,13 @@
 ---
-- name: create zookeeper install directory
-  file: path={{ zk_install_dir }} state=directory
-- name: create zookeeper data directory
-  file: path={{ zk_data_dir }} state=directory
-- name: unarchive zookeeper binary to install directory
-  unarchive: src={{ zk_binary_src_dir }}/{{ zk_binary_name }} dest={{ zk_install_dir }}
-- name: copy zoo.cfg to install directory
-  template: src=zoo.cfg dest={{ zk_install_dir }}/{{zk_app_name}}/conf/zoo.cfg
-- name: copy myid to data directory
-  template: src=myid dest={{zk_data_dir}}
-- name: setup env vars
-  shell: "sed -i '/ZOO_LOG_DIR/d' /etc/bashrc && sed -i '$a export ZOO_LOG_DIR={{zk_log_dir}}' /etc/bashrc && source /etc/bashrc"
+- name: create kafka install directory
+  file: path={{ install_dir }} state=directory
+- name: create kafka data logs directory
+  file: path={{ log_dirs }} state=directory
+- name: unarchive kafka binary to install directory
+  unarchive: src={{ binary_src_dir }}/{{ binary_name }} dest={{ install_dir }}
+- name: copy server.properties to install directory
+  template: src=server.properties dest={{ install_dir }}/{{app_name}}/config/server.properties
+- name: copy log4j.properties to install directory
+  template: src=log4j.properties dest={{ install_dir }}/{{app_name}}/config/log4j.properties
+
 

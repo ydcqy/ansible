@@ -1,0 +1,17 @@
+---
+- name: Kafka environment init
+  hosts: kafka
+  remote_user: root
+  roles:
+    - common
+- name: Kafka manager install
+  hosts: web
+  remote_user: root
+  roles:
+    - web
+
+#- name: Zookeeper start
+#  hosts: all
+#  remote_user: root
+#  roles:
+#    - zk-cluster
