@@ -1,7 +1,15 @@
 ---
 - name: Kafka restart
-  hosts: all
+  hosts: kafka
   remote_user: root
   tasks:
     - name: restart kafka...
       shell: "{{install_dir}}/{{app_name}}/bin/kafka-server-stop.sh;{{install_dir}}/{{app_name}}/bin/kafka-server-start.sh -daemon {{install_dir}}/{{app_name}}/config/server.properties"
+- name: Kafka manager restart
+  hosts: web
+  remote_user: root
+  tasks:
+    - name: restart kafka manger...
+      #shell: "kill `ps -ef | grep \\[k\\]afka-manager  | awk \'{print $2}\'`;nohup {{web_install_dir}}/{{web_app_name}}/bin/kafka-manager > /dev/null 2>&1 &"
+      shell: "kill `ps -ef | grep kafka-manager | grep -v grep | awk '{print $2}'` ; nohup {{web_install_dir}}/{{web_app_name}}/bin/kafka-manager > /dev/null 2>&1 &"
+
