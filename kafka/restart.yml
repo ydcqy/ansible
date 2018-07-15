@@ -4,7 +4,7 @@
   remote_user: root
   tasks:
     - name: restart kafka...
-      shell: "{{install_dir}}/{{app_name}}/bin/kafka-server-stop.sh;{{install_dir}}/{{app_name}}/bin/kafka-server-start.sh -daemon {{install_dir}}/{{app_name}}/config/server.properties"
+      shell: "{{install_dir}}/{{app_name}}/bin/kafka-server-stop.sh;sleep 10;{{install_dir}}/{{app_name}}/bin/kafka-server-start.sh -daemon {{install_dir}}/{{app_name}}/config/server.properties"
 - name: Kafka manager restart
   hosts: web
   remote_user: root
