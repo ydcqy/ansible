@@ -1,0 +1,12 @@
+---
+- name: create install directory
+  file: path={{ install_dir }} state=directory
+- name: clear install directory
+  shell: rm -fr {{ install_dir }}/*
+- name: unarchive binary to install directory
+  unarchive: src={{ binary_src_dir }}/{{ binary_name }} dest={{ install_dir }}
+- name: setup env var >>> NODEJS_HOME
+  shell: "sed -i '/NODEJS_HOME/d' /etc/bashrc && sed -i '$a export NODEJS_HOME={{install_dir}}/{{app_name}}' /etc/bashrc"
+- name: setup env var >>> PATH
+  shell: "sed -i '$a export PATH=$PATH:$NODEJS_HOME/bin' /etc/bashrc && source /etc/bashrc"
+

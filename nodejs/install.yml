@@ -1,0 +1,11 @@
+---
+- name: Local resource init
+  hosts: localhost
+  tasks:
+    - name: download file to local by url
+      shell: "[ -f {{ binary_src_dir }}/{{binary_name}} ] || (mkdir -p {{ binary_src_dir }} && wget -O {{ binary_src_dir }}/{{ binary_name }} {{ download_url }})"
+- name: Environment init
+  hosts: all
+  remote_user: root
+  roles:
+    - common

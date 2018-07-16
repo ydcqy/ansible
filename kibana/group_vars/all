@@ -5,4 +5,4 @@ install_dir: /opt/app/kibana
 app_name: kibana-6.3.2-linux-x86_64
 
 kibana_port: 5601
-es_url: "http://10.1.7.11:9200"
+es_url: "http://10.1.7.31:9200"

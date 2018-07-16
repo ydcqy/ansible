@@ -93,3 +93,6 @@ discovery.zen.minimum_master_nodes: {{ groups['es-servers']|length//2+1 }}
 # Require explicit names when deleting indices:
 #
 #action.destructive_requires_name: true
+
+http.cors.enabled: true
+http.cors.allow-origin: "*"

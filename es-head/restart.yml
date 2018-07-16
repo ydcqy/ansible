@@ -1,0 +1,10 @@
+---
+- name: Restart
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: restart...
+      shell: "kill `ps -ef | grep grunt | grep -v grep | awk '{print $2}'`;cd {{install_dir}}/{{app_name}} ; nohup npm run start > {{install_dir}}/{{app_name}}/grunt.log  2>&1 &"
+      async: 10
+      poll: 5
+

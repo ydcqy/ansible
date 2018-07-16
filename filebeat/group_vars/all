@@ -5,4 +5,4 @@ install_dir: /opt/app/filebeat
 app_name: filebeat-6.3.2-linux-x86_64
 
 log_dir: /opt/log/*.log
-logstash_hosts: '["10.1.7.11:5044"]'
+logstash_hosts: '["10.1.7.31:5044"]'

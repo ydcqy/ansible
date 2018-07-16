@@ -1,0 +1,6 @@
+---
+download_url: https://nodejs.org/dist/v8.11.3/node-v8.11.3-linux-x64.tar.xz
+binary_name: node-v8.11.3-linux-x64.tar.xz
+binary_src_dir: /opt/downloadfile
+install_dir: /opt/app/nodejs
+app_name: node-v8.11.3-linux-x64

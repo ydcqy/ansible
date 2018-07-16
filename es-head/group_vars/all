@@ -1,0 +1,6 @@
+---
+download_url: https://codeload.github.com/mobz/elasticsearch-head/tar.gz/v5.0.0
+binary_name: elasticsearch-head-5.0.0.tar.gz
+binary_src_dir: /opt/downloadfile
+install_dir: /opt/app/es-head
+app_name: elasticsearch-head-5.0.0
