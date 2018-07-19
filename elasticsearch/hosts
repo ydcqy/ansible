@@ -1,4 +1,4 @@
 [es-servers]
 10.1.7.31 ansible_ssh_pass=abcd1234
-10.1.7.32 ansible_ssh_pass=abcd1234
-10.1.7.33 ansible_ssh_pass=abcd1234
+#10.1.7.32 ansible_ssh_pass=abcd1234
+#10.1.7.33 ansible_ssh_pass=abcd1234

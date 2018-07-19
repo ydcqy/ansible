@@ -4,5 +4,5 @@ binary_src_dir: /opt/downloadfile
 install_dir: /opt/app/logstash
 app_name: logstash-6.3.2
 
-es_hosts: '["10.1.7.31:9200","10.1.7.32:9200","10.1.7.33:9200"]'
+es_hosts: '["10.1.7.31:9200"]'
 beats_port: 5044
