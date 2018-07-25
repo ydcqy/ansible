@@ -1,10 +1,12 @@
 ---
 - name: Kafka environment init
+  tags: kafka
   hosts: kafka
   remote_user: root
   roles:
     - common
 - name: Kafka manager install
+  tags: web
   hosts: web
   remote_user: root
   roles:

@@ -11,7 +11,7 @@ num_partitions: 3
 zookeeper_connect: 10.1.7.11:2181,10.1.7.12:2181,10.1.7.13:2181
 
 # kafka管理界面
-web_binary_name: kafka-manager-1.3.3.18.tar.gz
+web_binary_name: kafka-manager-1.3.3.18.zip
 web_binary_src_dir: /opt/downloadfile
 web_install_dir: /opt/app/kafka-manager
 web_app_name: kafka-manager-1.3.3.18
