@@ -1,0 +1,10 @@
+---
+- name: Restart
+  hosts: all
+  remote_user: es
+  tasks:
+    - name: restart...
+      shell: "kill `ps -ef | grep elasticsearch | grep -v grep | awk '{print $2}'`;{{install_dir}}/{{app_name}}/bin/elasticsearch -d"
+      async: 10
+      poll: 5
+

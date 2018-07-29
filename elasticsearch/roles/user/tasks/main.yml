@@ -1,0 +1,5 @@
+---
+- name: add user
+  user: name=es state=present
+- name: setup password
+  shell: "echo abcd1234 | passwd es --stdin"

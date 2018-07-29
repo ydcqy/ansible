@@ -1,0 +1,3 @@
+[es-servers]
+10.1.7.11 ansible_ssh_pass=abcd1234
+10.1.7.12 ansible_ssh_pass=abcd1234

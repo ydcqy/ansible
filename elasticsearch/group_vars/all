@@ -1,0 +1,10 @@
+---
+binary_name: elasticsearch-6.3.2.tar.gz
+binary_src_dir: /opt/downloadfile
+install_dir: /opt/app/elasticsearch
+app_name: elasticsearch-6.3.2
+
+log_dir: /var/log/elasticsearch
+data_dir: /var/data/elasticsearch
+
+cluster_name: elk-test

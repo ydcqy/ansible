@@ -1,0 +1,25 @@
+---
+- name: Add user
+  hosts: all
+  remote_user: root
+  roles:
+    - user
+- name: Environment init
+  hosts: all
+  remote_user: root
+  roles:
+    - common
+- name: System parameter
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: setup vm.max_map_count
+      shell: "sed -i '/vm.max_map_count/d' /etc/sysctl.conf && sed -i '$a vm.max_map_count=262144' /etc/sysctl.conf && sysctl -p"
+    - name: setup soft nofile
+      shell: "sed -i '/^* soft nofile/d' /etc/security/limits.conf && sed -i '$a * soft nofile 65536' /etc/security/limits.conf"
+    - name: setup hard nofile
+      shell: "sed -i '/^* hard nofile/d' /etc/security/limits.conf && sed -i '$a * hard nofile 65536' /etc/security/limits.conf"
+    - name: setup soft nproc
+      shell: "sed -i '/^* soft nproc/d' /etc/security/limits.conf && sed -i '$a * soft nproc 4096' /etc/security/limits.conf"
+    - name: setup hard nproc
+      shell: "sed -i '/^* hard nproc/d' /etc/security/limits.conf && sed -i '$a * hard nproc 4096' /etc/security/limits.conf"
