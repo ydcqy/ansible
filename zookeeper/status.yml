@@ -3,5 +3,5 @@
   hosts: all
   remote_user: root
   tasks:
-    - name: restart zk...
+    - name: status zk...
       shell: "{{zk_install_dir}}/{{zk_app_name}}/bin/zkServer.sh status"

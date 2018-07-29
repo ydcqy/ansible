@@ -11,5 +11,5 @@
   tasks:
     - name: restart kafka manger...
       #shell: "kill `ps -ef | grep \\[k\\]afka-manager  | awk \'{print $2}\'`;nohup {{web_install_dir}}/{{web_app_name}}/bin/kafka-manager > /dev/null 2>&1 &"
-      shell: "kill `ps -ef | grep kafka-manager | grep -v grep | awk '{print $2}'` ; nohup {{web_install_dir}}/{{web_app_name}}/bin/kafka-manager > /dev/null 2>&1 &"
+      shell: "kill `ps -ef | grep kafka-manager | grep -v grep | awk '{print $2}'` ;rm -fr {{web_install_dir}}/{{web_app_name}}/RUNNING_PID ; nohup {{web_install_dir}}/{{web_app_name}}/bin/kafka-manager > /dev/null 2>&1 &"
 
