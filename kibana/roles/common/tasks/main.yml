@@ -1,0 +1,10 @@
+---
+- name: create install directory
+  file: path={{ install_dir }} state=directory
+- name: clear install directory
+  shell: rm -fr {{ install_dir }}/*
+- name: unarchive binary to install directory
+  unarchive: src={{ binary_src_dir }}/{{ binary_name }} dest={{ install_dir }}
+- name: copy templates to install directory
+  template: src=kibana.yml dest={{ install_dir }}/{{app_name}}/config/kibana.yml
+

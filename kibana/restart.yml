@@ -1,0 +1,10 @@
+---
+- name: Restart
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: restart...
+      shell: "kill `ps -ef | grep kibana | grep -v grep | awk '{print $2}'`;nohup {{install_dir}}/{{app_name}}/bin/kibana -c {{install_dir}}/{{app_name}}/config/kibana.yml > {{install_dir}}/{{app_name}}/kibana.log  2>&1 &"
+      async: 10
+      poll: 5
+

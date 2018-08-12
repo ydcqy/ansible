@@ -1,0 +1,8 @@
+---
+binary_name: logstash-6.3.2.tar.gz
+binary_src_dir: /opt/downloadfile
+install_dir: /opt/app/logstash
+app_name: logstash-6.3.2
+
+es_hosts: '["10.1.7.11:9200","10.1.7.12:9200"]'
+beats_port: 5044

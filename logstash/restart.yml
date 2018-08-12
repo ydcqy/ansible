@@ -1,0 +1,10 @@
+---
+- name: Restart
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: restart...
+      shell: "kill `ps -ef | grep logstash | grep -v grep | awk '{print $2}'`;nohup {{install_dir}}/{{app_name}}/bin/logstash -f {{install_dir}}/{{app_name}}/config/logstash.conf > /dev/null 2>&1 &"
+      async: 10
+      poll: 5
+
